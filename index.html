@@ -16,11 +16,68 @@
   <link rel="stylesheet" href="styles1.css">
   <link rel="stylesheet" href="styles2.css">
   <style>
-    .hero-grid { grid-template-columns: 1fr !important; max-width: 640px; margin: 0 auto; text-align: center; }
-    .hero-content { text-align: center; }
-    .hero-meta { justify-content: center; }
-    .hero-actions { justify-content: center; }
-    .hero-meta-item { justify-content: center; }
+    .hero {
+      padding: calc(var(--header-height) + 4.5rem) 0 4.5rem;
+      text-align: center;
+    }
+    .hero-grid {
+      display: block;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+    .hero-content {
+      text-align: center;
+      order: unset;
+    }
+    .hero-name {
+      font-size: clamp(2rem, 5.5vw, 3rem);
+      margin-bottom: 0.5rem;
+    }
+    .hero-role {
+      margin-bottom: 1.5rem;
+    }
+    .hero-desc {
+      max-width: 480px;
+      margin: 0 auto 2rem;
+      font-size: 1.05rem;
+    }
+    .hero-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      max-width: 360px;
+      margin: 0 auto 2.25rem;
+      background: var(--color-white);
+      border: 1px solid rgba(92, 74, 58, 0.1);
+      border-radius: 4px;
+      overflow: hidden;
+      text-align: left;
+    }
+    .hero-meta-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.85rem 1.15rem;
+      border-bottom: 1px solid rgba(92, 74, 58, 0.08);
+      font-size: 0.875rem;
+    }
+    .hero-meta-item:last-child {
+      border-bottom: none;
+    }
+    .hero-meta-label {
+      color: var(--color-text-muted);
+      flex-shrink: 0;
+    }
+    .hero-meta-value {
+      color: var(--color-dark-brown);
+      font-weight: 500;
+      text-align: right;
+    }
+    .hero-actions {
+      justify-content: center;
+      gap: 0.85rem;
+    }
   </style>
 </head>
 <body>
@@ -62,9 +119,18 @@
             <p class="hero-role">Klinik psixolog</p>
             <p class="hero-desc">Klinik psixologiya, psixologik treninglar va oliy ta'lim yo'nalishida faoliyat yurituvchi mutaxassis.</p>
             <div class="hero-meta">
-              <div class="hero-meta-item"><span class="hero-meta-label">Mutaxassisligi:</span> <span class="hero-meta-value">Klinik psixolog</span></div>
-              <div class="hero-meta-item"><span class="hero-meta-label">Faoliyat joyi:</span> <span class="hero-meta-value">TMC Instituti</span></div>
-              <div class="hero-meta-item"><span class="hero-meta-label">Professional yo'nalishi:</span> <span class="hero-meta-value">Klinik psixologiya</span></div>
+              <div class="hero-meta-item">
+                <span class="hero-meta-label">Mutaxassisligi</span>
+                <span class="hero-meta-value">Klinik psixolog</span>
+              </div>
+              <div class="hero-meta-item">
+                <span class="hero-meta-label">Faoliyat joyi</span>
+                <span class="hero-meta-value">TMC Instituti</span>
+              </div>
+              <div class="hero-meta-item">
+                <span class="hero-meta-label">Yo'nalishi</span>
+                <span class="hero-meta-value">Klinik psixologiya</span>
+              </div>
             </div>
             <div class="hero-actions">
               <a href="#boglanish" class="btn btn-primary">Bog'lanish</a>
